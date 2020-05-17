@@ -30,7 +30,7 @@ moneyManager.addMoneyCallback = data => ApiConnector.addMoney(data, function(res
         moneyManager.setMessage(true, response.data);
     } else {
         ProfileWidget.showProfile(response.data);
-        moneyManager.setMessage(false, "РЈСЃРїРµС€РЅРѕРµ РґРѕР±Р°РІР»РµРЅРёРµ СЃСЂРµРґСЃС‚РІ");
+        moneyManager.setMessage(false, "Успешное добавление средств");
     }
 });
 
@@ -39,7 +39,7 @@ moneyManager.conversionMoneyCallback = data => ApiConnector.convertMoney(data, f
         moneyManager.setMessage(true, response.data);
     } else {
         ProfileWidget.showProfile(response.data);
-        moneyManager.setMessage(false, "РЈСЃРїРµС€РЅС‹Р№ РїРµСЂРµРІРѕРґ СЃСЂРµРґСЃС‚РІ");
+        moneyManager.setMessage(false, "Успешный перевод средств");
     }
 });
 
@@ -49,7 +49,7 @@ moneyManager.sendMoneyCallback = data => ApiConnector.transferMoney(data, functi
         moneyManager.setMessage(true, response.data);
     } else {
         ProfileWidget.showProfile(response.data);
-        moneyManager.setMessage(false, "РЈСЃРїРµС€РЅР°СЏ РѕС‚РїСЂР°РІРєР° СЃСЂРµРґСЃС‚РІ");
+        moneyManager.setMessage(false, "Успешная отправка средств");
     }
 });
 
@@ -68,7 +68,7 @@ favoritesWidget.addUserCallback = f => ApiConnector.addUserToFavorites(f,functio
         favoritesWidget.clearTable();
         favoritesWidget.fillTable(response.data);
         moneyManager.updateUsersList(response.data);
-        favoritesWidget.setMessage(false, "РЈСЃРїРµС€РЅРѕРµ РґРѕР±Р°РІР»РµРЅРёРµ РІ РёР·Р±СЂР°РЅРЅС‹Рµ");
+        favoritesWidget.setMessage(false, "Успешное добавление в избранные");
     } else {
         favoritesWidget.setMessage(true, response.data);
     }
@@ -79,7 +79,7 @@ favoritesWidget.removeUserCallback = f => ApiConnector.removeUserFromFavorites(f
         favoritesWidget.clearTable();
         favoritesWidget.fillTable(response.data);
         moneyManager.updateUsersList(response.data);
-        favoritesWidget.setMessage(false, "РЈСЃРїРµС€РЅРѕРµ СѓРґР°Р»РµРЅРёРµ РёР· РёР·Р±СЂР°РЅРЅС‹Рµ");
+        favoritesWidget.setMessage(false, "Успешное удаление из избранные");
     } else {
         favoritesWidget.setMessage(true, response.data);
     }
